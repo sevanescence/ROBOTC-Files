@@ -67,13 +67,13 @@ task main() {
   // methods (functions) in part three. Let me cover that!
   
   // on second thought, their methods of making a function (pun intended)
-  // is ALSO garbage. It's very beginner-level and redundant, so let's fix that!
+  // are ALSO garbage. It's very beginner-level and redundant, so let's fix that!
   
-  // instead of definin the method at the top of the class, then defining it
+  // instead of defining the method at the top of the class, then defining it
   // below main(), just define the function on top!
   
   // jokes aside, either works just fine. no offense towards PLTW. Do whatever
-  // makes you happy.
+  // makes you happy. (which is function on top)
   
   while (true) {
   
