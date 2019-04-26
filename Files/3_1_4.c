@@ -1,6 +1,6 @@
 void callLightSensorForFlashlight() {
 
-  while(true) {
+  while (true) {
   
     if (SensorValue(lightSensor) > 700) {
       // SensorValue is the function used for measuring
@@ -22,7 +22,7 @@ void callLightSensorForFlashlight() {
 
 void checkLimitSwitchAndLightSensorForFlashligh() {
 
-  while(true) {
+  while (true) {
   
     while(SensorValue(limitSwitch) != 0) {
     
