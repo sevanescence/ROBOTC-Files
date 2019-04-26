@@ -44,11 +44,14 @@ void checkLimitSwitchAndLightSensorForFlashligh() {
 
 void toggleLEDTimer() {
 
-  ClearTImer(T1); // initializes the timer used below.
+  ClearTimer(T1); // initializes the timer used below.
   
   while (time1(T1) < 20000) { // 20000 milliseconds = 20 seconds.
     // the timer will count as time passes, and will stop at
     // 20000 milliseconds.
+    // Note that time1(T1) returns the amount of time that has passed
+    // since ClearTimer(T1). You will need this knowledge when doing
+    // the Advanced Project in POE!
   
     turnLEDOn(green);
     
