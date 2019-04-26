@@ -67,7 +67,7 @@ void toggleLEDTimer() {
 
 task main() {
 
-  callLightSensorForFlashlight(); // executes "void callLighSensorForFlashlight()" defined above.
+  callLightSensorForFlashlight(); // executes "void callLightSensorForFlashlight()" defined above.
   // writing your code neatly like this makes it
   // a lot easier to disable entire sections of your
   // code to test other parts of your project.
