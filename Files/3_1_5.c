@@ -45,7 +45,7 @@ void findBiggestPotentiometerValue() {
 
 void LEDControl() {
 
-  if (SensorValue(bumpSwitch != 0) {
+  if (SensorValue(bumpSwitch != 0)) {
   
     turnLEDOn(green);
   
