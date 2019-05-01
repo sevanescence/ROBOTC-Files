@@ -1,8 +1,8 @@
 void timeServo(float time) {
+  
+  bool temp = !(SensorValue(servoMotor) > 126);
 
   clearTimer(T1);
-  
-  bool temp = (SensorValue(servoMotor) > 126);
   
   while (time1(T1) < (time * 1000)) {
   
@@ -28,7 +28,7 @@ void timeServo(float time) {
       
       }
       
-      setServo(servoMotor, SensorValue(servoMotor) + 1);
+      setServo(servoMotor, SensorValue(servoMotor) - 1);
     
     }
   
