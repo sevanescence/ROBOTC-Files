@@ -1,4 +1,4 @@
-void timeServoPositive(int time) {
+void timeServoPositive(float time) {
   
   if (SensorValue(servoMotor) >= 127) {
     return;
@@ -18,7 +18,7 @@ void timeServoPositive(int time) {
   
 }
 
-void timeServoNegative(int time) {
+void timeServoNegative(float time) {
   
   if (SensorValue(servoMotor) <= -127) {
     return;
