@@ -1,6 +1,6 @@
 void timeServo(float time) {
   
-  bool temp = (SensorValue(servoMotor) > -127);
+  bool temp = (SensorValue(servoMotor) < 127);
   
   clearTimer(T1);
   
