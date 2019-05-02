@@ -1,4 +1,19 @@
-void startServoPositive(tMotor motorIndex, double speed, bool loop, float time) {
+bool checkServoCondition(tMotor motorIndex, bool loop, bool direction) {
+
+  if (loop) {
+  
+    if (direction) setServo(motorIndex, -127);
+      else setServo(motorIndex, 127);
+    
+    return true;
+  
+  }
+  
+  return false;
+
+}
+
+void startServoPositive(tMotor motorIndex, float speed, bool loop, float time) {
 
   bool temp = true;
 
@@ -24,7 +39,7 @@ void startServoPositive(tMotor motorIndex, double speed, bool loop, float time) 
 
 }
 
-void startServoNegative(tMotor motorIndex, double speed, bool loop, float time) {
+void startServoNegative(tMotor motorIndex, float speed, bool loop, float time) {
 
   bool temp = false;
   
@@ -40,27 +55,12 @@ void startServoNegative(tMotor motorIndex, double speed, bool loop, float time) 
   
     if (SensorValue(motorIndex) <= -127) {
     
-      if (!checkMotorCondition(motorIndex, loop, temp)) break;
+      if (!checkServoCondition(motorIndex, loop, temp)) break;
     
     }
     
     setServo(motorIndex, SensorValue(motorIndex) - speed);
   
   }
-
-}
-
-bool checkServoCondition(tMotor motorIndex, bool loop, bool direction) {
-
-  if (loop) {
-  
-    if (direction) setServo(motorIndex, -127);
-      else setServo(motorIndex, 127);
-    
-    return true;
-  
-  }
-  
-  return false;
 
 }
