@@ -1,6 +1,6 @@
-bool checkServoCondition(tMotor motorIndex, bool loop, bool direction) {
+bool checkServoCondition(tMotor motorIndex, bool loop, bool direction) { // this method is used in startServo()
 
-  if (loop) {
+  if (loop) { // checks if the servo motor was told to loop
   
     if (direction) setServo(motorIndex, -127);
       else setServo(motorIndex, 127);
@@ -19,7 +19,7 @@ void startServoPositive(tMotor motorIndex, float speed, bool loop, float time) {
 
   if (SensorValue(motorIndex) >= 127) {
   
-    if (!checkServoCondition(motorIndex, loop, temp)) return;
+    if (!checkServoCondition(motorIndex, loop, temp)) return; // checks for a loop and resets the motor
   
   }
   
@@ -29,7 +29,7 @@ void startServoPositive(tMotor motorIndex, float speed, bool loop, float time) {
   
     if (SensorValue(motorIndex) >= 127) {
     
-      if (!checkServoCondition(motorIndex, loop, temp)) break;
+      if (!checkServoCondition(motorIndex, loop, temp)) break; // checks for a loop and resets the motor
     
     }
     
@@ -45,7 +45,7 @@ void startServoNegative(tMotor motorIndex, float speed, bool loop, float time) {
   
   if (SensorValue(motorIndex) <= -127) {
   
-    if (!checkServoCondition(motorIndex, loop, temp)) return;
+    if (!checkServoCondition(motorIndex, loop, temp)) return; // checks for a loop and resets the motor
   
   }
   
@@ -55,7 +55,7 @@ void startServoNegative(tMotor motorIndex, float speed, bool loop, float time) {
   
     if (SensorValue(motorIndex) <= -127) {
     
-      if (!checkServoCondition(motorIndex, loop, temp)) break;
+      if (!checkServoCondition(motorIndex, loop, temp)) break; // checks for a loop and resets the motor
     
     }
     
