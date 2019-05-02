@@ -3,7 +3,7 @@ ROBOTC is easy to learn, but the documentation provided by PLTW is garbage. Here
 
 
 
-startServo info:
+# startServo info:
 
 startServo([Positive|Negative])(motorIndex, double speed, bool loop, float time);
 
