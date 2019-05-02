@@ -1,38 +1,40 @@
-void timeServoPositive(float time) {
+void timeServoPositive(tMotor motorIndex, float time, double speed) {
   
-  if (SensorValue(servoMotor) >= 127) {
-    return;
+  if (SensorValue(motorIndex) >= 127) {
+    setServo(motorIndex, -127);
   }
   
   clearTimer(T1);
   
   while (time1(T1) < (time * 1000)) {
     
-    if (SensorValue(servoMotor) >= 127) {
-      break;
+    if (SensorValue(motorIndex) >= 127) {
+      setServo(motorIndex, -127);
+      continue;
     }
     
-    setServo(servoMotor, SensorValue(servoMotor) + 1);
+    setServo(motorIndex, SensorValue(motorIndex) + speed);
     
   }
   
 }
 
-void timeServoNegative(float time) {
+void timeServoNegative(tMotor motorIndex, float time, double speed) {
   
-  if (SensorValue(servoMotor) <= -127) {
-    return;
+  if (SensorValue(motorIndex) <= -127) {
+    setServo(motorIndex, 127);
   }
   
   clearTimer(T1);
   
   while (time1(T1) < (time * 1000)) {
     
-    if (SensorValue(servoMotor) <= -127) {
-      break;
+    if (SensorValue(motorIndex) <= -127) {
+      setServo(motorIndex, 127);
+      continue;
     }
     
-    setServo(servoMotor, SensorValue(servoMotor) - 1);
+    setServo(motorIndex, SensorValue(motorIndex) - speed);
     
   }
   
